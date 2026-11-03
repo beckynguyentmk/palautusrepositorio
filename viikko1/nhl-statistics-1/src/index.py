@@ -3,19 +3,11 @@ from player_reader import PlayerReader
 
 
 def main():
-    stats = StatisticsService(PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2024-25/players.txt"))
-    philadelphia_flyers_players = stats.team("PHI")
-    top_scorers = stats.top(10)
+    stats = StatisticsService(
+      PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2024-25/players.txt")
+    )
 
-    print("Philadelphia Flyers:")
-    for player in philadelphia_flyers_players:
-        print(player)
-
-    print()  
-
-    print("Top point getters:")
-    for player in top_scorers:
-        print(player)
+    # järjestetään kaikkien tehopisteiden eli maalit+syötöt perusteella
     print("Top point getters:")
     for player in stats.top(5, SortBy.POINTS):
         print(player)
