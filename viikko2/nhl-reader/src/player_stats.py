@@ -1,4 +1,4 @@
-from player_reader import PlayerReader
+# pylint: disable=too-few-public-methods
 
 class PlayerStats:
     def __init__(self,reader):
@@ -9,7 +9,7 @@ class PlayerStats:
         for player in self.players:
             if player.nationality==nationality:
                 players_list.append(player)
-        
+
         players_list.sort(key=lambda player: player.goals+player.assists, reverse=True)
 
         return players_list

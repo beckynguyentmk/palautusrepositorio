@@ -11,3 +11,8 @@ dependencies = [
     "rich>=15.0.0",
     "sqlalchemy==1.4.54",
 ]
+
+[dependency-groups]
+dev = [
+    "pylint>=4.1.3",
+]
