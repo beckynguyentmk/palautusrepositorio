@@ -13,6 +13,34 @@ Register With Valid Username And Password
     Click  button >> text=Register
     Register Should Succeed
 
+Register With Password Containing Numbers
+    Set Username  Lucy
+    Set Password  kalle123
+    Set Password_confirmation  kalle123
+    Click  button >> text=Register
+    Register Should Succeed
+
+Register With Password Containing Special Characters
+    Set Username  Lucy
+    Set Password  kalle#abc
+    Set Password_confirmation  kalle#abc
+    Click  button >> text=Register
+    Register Should Succeed
+
+Register With Password Containing Only Lowercase Letters
+    Set Username  Lucy
+    Set Password  kallekalle
+    Set Password_confirmation  kallekalle
+    Click  button >> text=Register
+    Register Should Fail With Message  Password must contain at least one non-letter character
+
+Register With Password Containing Only Uppercase And Lowercase Letters
+    Set Username  Lucy
+    Set Password  KalleKalle
+    Set Password_confirmation  KalleKalle
+    Click  button >> text=Register
+    Register Should Fail With Message  Password must contain at least one non-letter character
+
 Register With Too Short Username And Valid Password
     Set Username  L
     Set Password  lucy12345678
