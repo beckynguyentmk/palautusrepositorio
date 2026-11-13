@@ -55,5 +55,10 @@ class UserService:
                 "Password must contain at least one non-letter character"
             )
 
+        if password != password_confirmation:
+            raise UserInputError(
+                "Password and password confirmation do not match"
+            )
+
 
 user_service = UserService()

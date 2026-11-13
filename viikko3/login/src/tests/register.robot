@@ -13,6 +13,20 @@ Register With Valid Username And Password
     Click  button >> text=Register
     Register Should Succeed
 
+Register With Matching Password And Confirmation
+    Set Username  Lucy
+    Set Password  lucy12345678
+    Set Password_confirmation  lucy12345678
+    Click  button >> text=Register
+    Register Should Succeed
+
+Register With Different Password And Confirmation
+    Set Username  Lucy
+    Set Password  lucy12345678
+    Set Password_confirmation  lucy87654321
+    Click  button >> text=Register
+    Register Should Fail With Message  Password and password confirmation do not match
+
 Register With Password Containing Numbers
     Set Username  Lucy
     Set Password  kalle123
