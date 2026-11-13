@@ -7,7 +7,7 @@ Test Setup      Reset Application Create User And Go To Login Page
 *** Test Cases ***
 Login With Correct Credentials
     Set Username  kalle
-    Set Password  kalle123
+    Set Password  kalle12345678
     Click  button >> text=Login
     Login Should Succeed
 
@@ -42,5 +42,5 @@ Set Password
 
 Reset Application Create User And Go To Login Page
     Reset Application
-    Create User  kalle  kalle123
+    Create User  kalle  kalle12345678
     Go To Login Page
