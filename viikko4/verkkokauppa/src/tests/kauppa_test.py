@@ -114,8 +114,11 @@ class TestKauppa(unittest.TestCase):
         self.kauppa.aloita_asiointi()
         self.kauppa.lisaa_koriin(1)
         self.kauppa.poista_korista(1)
-        self.kauppa.tilimaksu("pekka", "12345")
 
+        tuote=self.varasto_mock.hae_tuote(1)
+        self.varasto_mock.palauta_varastoon.assert_called_once_with(tuote)
+
+        self.kauppa.tilimaksu("pekka", "12345")
         self.pankki_mock.tilisiirto.assert_called_with("pekka", 42, "12345", "33333-44455", 0)
 
     
